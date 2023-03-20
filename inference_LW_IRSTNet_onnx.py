@@ -8,10 +8,6 @@ import time
 '''
 ——————————————————————————————————————————————Single frame infrared image segmentation——————————————————————————————————————————————————————————————
 '''
-def getZ(img,X,Y):
-    gray = img[X,Y]
-    return gray
-
 def preprocess_image(img):
     means=[0.485, 0.456, 0.406]
     stds=[0.229, 0.224, 0.225]
