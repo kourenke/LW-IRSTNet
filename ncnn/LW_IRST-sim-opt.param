@@ -1,0 +1,174 @@
+7767517
+172 200
+Input                    input                    0 1 input
+Split                    splitncnn_input0         1 2 input input_splitncnn_0 input_splitncnn_1
+MemoryData               onnx::Concat_611         0 1 onnx::Concat_611 0=64 1=64 2=24
+MemoryData               onnx::Concat_709         0 1 onnx::Concat_709 0=32 1=32 2=32
+Convolution              Conv_0                   1 1 input_splitncnn_1 onnx::Concat_588 0=5 1=3 3=2 4=1 6=135
+Pooling                  MaxPool_1                1 1 input_splitncnn_0 onnx::Concat_589 1=3 2=2 3=1 5=1
+Concat                   Concat_2                 2 1 onnx::Concat_588 onnx::Concat_589 input.1
+BatchNorm                BatchNormalization_3     1 1 input.1 onnx::PRelu_591 0=8
+ReLU                     PRelu_4                  1 1 onnx::PRelu_591 input.4 0=1.055617e+00
+Split                    splitncnn_0              1 3 input.4 input.4_splitncnn_0 input.4_splitncnn_1 input.4_splitncnn_2
+Pooling                  MaxPool_5                1 1 input.4_splitncnn_2 onnx::Concat_595 1=2 2=2 5=1
+Convolution              Conv_6                   1 1 input.4_splitncnn_1 input.12 0=2 1=2 3=2 5=1 6=64 9=2 -23310=1,1.058438e+00
+Convolution              Conv_8                   1 1 input.12 input.20 0=2 1=3 4=1 5=1 6=36 9=2 -23310=1,1.043481e+00
+Convolution              Conv_10                  1 1 input.20 input.28 0=32 1=1 5=1 6=64 9=2 -23310=1,3.884061e-01
+Concat                   Concat_13                2 1 onnx::Concat_595 onnx::Concat_611 onnx::Add_612
+BinaryOp                 Add_14                   2 1 onnx::Add_612 input.28 onnx::PRelu_613
+ReLU                     PRelu_15                 1 1 onnx::PRelu_613 input.32 0=9.152491e-01
+Split                    splitncnn_1              1 2 input.32 input.32_splitncnn_0 input.32_splitncnn_1
+Convolution              Conv_16                  1 1 input.32_splitncnn_1 input.40 0=8 1=1 5=1 6=256 9=2 -23310=1,7.884508e-01
+Convolution              Conv_18                  1 1 input.40 input.48 0=8 1=3 4=1 5=1 6=576 9=2 -23310=1,8.111007e-01
+Convolution              Conv_20                  1 1 input.48 input.56 0=32 1=1 5=1 6=256 9=2 -23310=1,7.598717e-01
+BinaryOp                 Add_22                   2 1 input.32_splitncnn_0 input.56 onnx::PRelu_632
+ReLU                     PRelu_23                 1 1 onnx::PRelu_632 input.60 0=-4.314893e-01
+Split                    splitncnn_2              1 2 input.60 input.60_splitncnn_0 input.60_splitncnn_1
+Convolution              Conv_24                  1 1 input.60_splitncnn_1 input.68 0=8 1=1 5=1 6=256 9=2 -23310=1,1.953489e-01
+Convolution              Conv_26                  1 1 input.68 input.76 0=8 1=3 4=1 5=1 6=576 9=2 -23310=1,3.219723e-01
+Convolution              Conv_28                  1 1 input.76 input.84 0=32 1=1 5=1 6=256 9=2 -23310=1,-1.627617e-01
+BinaryOp                 Add_30                   2 1 input.60_splitncnn_0 input.84 onnx::PRelu_651
+ReLU                     PRelu_31                 1 1 onnx::PRelu_651 input.88 0=7.168985e-02
+Split                    splitncnn_3              1 2 input.88 input.88_splitncnn_0 input.88_splitncnn_1
+Convolution              Conv_32                  1 1 input.88_splitncnn_1 input.96 0=8 1=1 5=1 6=256 9=2 -23310=1,2.315165e-01
+Convolution              Conv_34                  1 1 input.96 input.104 0=8 1=3 4=1 5=1 6=576 9=2 -23310=1,7.776456e-02
+Convolution              Conv_36                  1 1 input.104 input.112 0=32 1=1 5=1 6=256 9=2 -23310=1,3.433512e-01
+BinaryOp                 Add_38                   2 1 input.88_splitncnn_0 input.112 onnx::PRelu_670
+ReLU                     PRelu_39                 1 1 onnx::PRelu_670 input.116 0=3.498986e-01
+Split                    splitncnn_4              1 2 input.116 input.116_splitncnn_0 input.116_splitncnn_1
+Convolution              Conv_40                  1 1 input.116_splitncnn_1 input.124 0=8 1=1 5=1 6=256 9=2 -23310=1,-1.570257e-01
+Convolution              Conv_42                  1 1 input.124 input.132 0=8 1=3 4=1 5=1 6=576 9=2 -23310=1,-7.129297e-02
+Convolution              Conv_44                  1 1 input.132 input.140 0=32 1=1 5=1 6=256 9=2 -23310=1,8.096498e-01
+BinaryOp                 Add_46                   2 1 input.116_splitncnn_0 input.140 onnx::PRelu_689
+ReLU                     PRelu_47                 1 1 onnx::PRelu_689 input.144 0=6.322770e-01
+Split                    splitncnn_5              1 3 input.144 input.144_splitncnn_0 input.144_splitncnn_1 input.144_splitncnn_2
+Pooling                  MaxPool_48               1 1 input.144_splitncnn_2 onnx::Concat_693 1=2 2=2 5=1
+Convolution              Conv_49                  1 1 input.144_splitncnn_1 input.152 0=8 1=2 3=2 5=1 6=1024 9=2 -23310=1,3.647376e-01
+Convolution              Conv_51                  1 1 input.152 input.160 0=8 1=3 4=1 5=1 6=576 9=2 -23310=1,-2.806199e-01
+Convolution              Conv_53                  1 1 input.160 input.168 0=64 1=1 5=1 6=512 9=2 -23310=1,3.886382e-01
+Concat                   Concat_56                2 1 onnx::Concat_693 onnx::Concat_709 onnx::Add_710
+BinaryOp                 Add_57                   2 1 onnx::Add_710 input.168 onnx::PRelu_711
+ReLU                     PRelu_58                 1 1 onnx::PRelu_711 input.172 0=1.527981e-01
+Split                    splitncnn_6              1 2 input.172 input.172_splitncnn_0 input.172_splitncnn_1
+Convolution              Conv_59                  1 1 input.172_splitncnn_1 input.180 0=128 1=1 5=1 6=8192 9=2 -23310=1,1.053125e-01
+ConvolutionDepthWise     Conv_61                  1 1 input.180 input.192 0=128 1=3 4=1 5=1 6=1152 7=128 9=1
+Convolution              Conv_63                  1 1 input.192 input.200 0=64 1=1 5=1 6=8192 9=2 -23310=1,7.747574e-01
+BinaryOp                 Add_65                   2 1 input.172_splitncnn_0 input.200 onnx::PRelu_728
+ReLU                     PRelu_66                 1 1 onnx::PRelu_728 input.204 0=5.777714e-02
+Split                    splitncnn_7              1 2 input.204 input.204_splitncnn_0 input.204_splitncnn_1
+Convolution              Conv_67                  1 1 input.204_splitncnn_1 input.212 0=16 1=1 5=1 6=1024 9=2 -23310=1,-1.985548e-02
+Convolution              Conv_69                  1 1 input.212 input.220 0=16 1=3 2=2 4=2 5=1 6=2304 9=2 -23310=1,-1.454476e-01
+Convolution              Conv_71                  1 1 input.220 input.228 0=64 1=1 5=1 6=1024 9=2 -23310=1,6.146985e-01
+BinaryOp                 Add_73                   2 1 input.204_splitncnn_0 input.228 onnx::PRelu_747
+ReLU                     PRelu_74                 1 1 onnx::PRelu_747 input.232 0=1.030823e-01
+Split                    splitncnn_8              1 2 input.232 input.232_splitncnn_0 input.232_splitncnn_1
+Convolution              Conv_75                  1 1 input.232_splitncnn_1 input.240 0=16 1=1 5=1 6=1024 9=2 -23310=1,7.856933e-02
+Convolution              Conv_77                  1 1 input.240 input.248 0=16 1=1 11=7 14=3 5=1 6=1792 9=2 -23310=1,-1.492939e-01
+Convolution              Conv_79                  1 1 input.248 input.256 0=16 1=7 11=1 4=3 14=0 5=1 6=1792 9=2 -23310=1,-2.408772e-02
+Convolution              Conv_81                  1 1 input.256 input.264 0=64 1=1 5=1 6=1024 9=2 -23310=1,3.302977e-01
+BinaryOp                 Add_83                   2 1 input.232_splitncnn_0 input.264 onnx::PRelu_771
+ReLU                     PRelu_84                 1 1 onnx::PRelu_771 input.268 0=1.370793e-01
+Split                    splitncnn_9              1 2 input.268 input.268_splitncnn_0 input.268_splitncnn_1
+Convolution              Conv_85                  1 1 input.268_splitncnn_1 input.276 0=16 1=1 5=1 6=1024 9=2 -23310=1,-5.396368e-02
+Convolution              Conv_87                  1 1 input.276 input.284 0=16 1=3 2=4 4=4 5=1 6=2304 9=2 -23310=1,-8.727761e-02
+Convolution              Conv_89                  1 1 input.284 input.292 0=64 1=1 5=1 6=1024 9=2 -23310=1,4.248600e-01
+BinaryOp                 Add_91                   2 1 input.268_splitncnn_0 input.292 onnx::PRelu_790
+ReLU                     PRelu_92                 1 1 onnx::PRelu_790 input.296 0=7.654528e-02
+Split                    splitncnn_10             1 2 input.296 input.296_splitncnn_0 input.296_splitncnn_1
+Convolution              Conv_93                  1 1 input.296_splitncnn_1 input.304 0=128 1=1 5=1 6=8192 9=2 -23310=1,-3.616960e-02
+ConvolutionDepthWise     Conv_95                  1 1 input.304 input.316 0=128 1=3 4=1 5=1 6=1152 7=128 9=1
+Convolution              Conv_97                  1 1 input.316 input.324 0=64 1=1 5=1 6=8192 9=2 -23310=1,8.284376e-01
+BinaryOp                 Add_99                   2 1 input.296_splitncnn_0 input.324 onnx::PRelu_807
+ReLU                     PRelu_100                1 1 onnx::PRelu_807 input.328 0=6.153982e-02
+Split                    splitncnn_11             1 2 input.328 input.328_splitncnn_0 input.328_splitncnn_1
+Convolution              Conv_101                 1 1 input.328_splitncnn_1 input.336 0=16 1=1 5=1 6=1024 9=2 -23310=1,7.045136e-02
+Convolution              Conv_103                 1 1 input.336 input.344 0=16 1=3 2=8 4=8 5=1 6=2304 9=2 -23310=1,-2.373551e-01
+Convolution              Conv_105                 1 1 input.344 input.352 0=64 1=1 5=1 6=1024 9=2 -23310=1,6.708386e-01
+BinaryOp                 Add_107                  2 1 input.328_splitncnn_0 input.352 onnx::PRelu_826
+ReLU                     PRelu_108                1 1 onnx::PRelu_826 input.356 0=1.270047e-01
+Split                    splitncnn_12             1 2 input.356 input.356_splitncnn_0 input.356_splitncnn_1
+Convolution              Conv_109                 1 1 input.356_splitncnn_1 input.364 0=16 1=1 5=1 6=1024 9=2 -23310=1,-1.125340e-02
+Convolution              Conv_111                 1 1 input.364 input.372 0=16 1=1 11=7 14=3 5=1 6=1792 9=2 -23310=1,-6.667212e-02
+Convolution              Conv_113                 1 1 input.372 input.380 0=16 1=7 11=1 4=3 14=0 5=1 6=1792 9=2 -23310=1,-3.066335e-01
+Convolution              Conv_115                 1 1 input.380 input.388 0=64 1=1 5=1 6=1024 9=2 -23310=1,5.483756e-01
+BinaryOp                 Add_117                  2 1 input.356_splitncnn_0 input.388 onnx::PRelu_850
+ReLU                     PRelu_118                1 1 onnx::PRelu_850 input.392 0=1.630137e-01
+Split                    splitncnn_13             1 2 input.392 input.392_splitncnn_0 input.392_splitncnn_1
+Convolution              Conv_119                 1 1 input.392_splitncnn_1 input.400 0=16 1=1 5=1 6=1024 9=2 -23310=1,5.376530e-02
+Convolution              Conv_121                 1 1 input.400 input.408 0=16 1=3 2=16 4=16 5=1 6=2304 9=2 -23310=1,-6.007463e-01
+Convolution              Conv_123                 1 1 input.408 input.416 0=64 1=1 5=1 6=1024 9=2 -23310=1,8.874772e-01
+BinaryOp                 Add_125                  2 1 input.392_splitncnn_0 input.416 onnx::PRelu_869
+ReLU                     PRelu_126                1 1 onnx::PRelu_869 input.420 0=1.467513e-01
+Split                    splitncnn_14             1 2 input.420 input.420_splitncnn_0 input.420_splitncnn_1
+Convolution              Conv_127                 1 1 input.420_splitncnn_1 input.428 0=128 1=1 5=1 6=8192 9=2 -23310=1,-1.282879e-01
+ConvolutionDepthWise     Conv_129                 1 1 input.428 input.440 0=128 1=3 4=1 5=1 6=1152 7=128 9=1
+Convolution              Conv_131                 1 1 input.440 input.448 0=64 1=1 5=1 6=8192 9=2 -23310=1,6.326327e-01
+BinaryOp                 Add_133                  2 1 input.420_splitncnn_0 input.448 onnx::PRelu_886
+ReLU                     PRelu_134                1 1 onnx::PRelu_886 input.452 0=1.036613e-01
+Split                    splitncnn_15             1 2 input.452 input.452_splitncnn_0 input.452_splitncnn_1
+Convolution              Conv_135                 1 1 input.452_splitncnn_1 input.460 0=16 1=1 5=1 6=1024 9=2 -23310=1,-1.637263e-01
+Convolution              Conv_137                 1 1 input.460 input.468 0=16 1=3 2=2 4=2 5=1 6=2304 9=2 -23310=1,-2.246242e-01
+Convolution              Conv_139                 1 1 input.468 input.476 0=64 1=1 5=1 6=1024 9=2 -23310=1,3.796972e-01
+BinaryOp                 Add_141                  2 1 input.452_splitncnn_0 input.476 onnx::PRelu_905
+ReLU                     PRelu_142                1 1 onnx::PRelu_905 input.480 0=1.325281e-01
+Split                    splitncnn_16             1 2 input.480 input.480_splitncnn_0 input.480_splitncnn_1
+Convolution              Conv_143                 1 1 input.480_splitncnn_1 input.488 0=16 1=1 5=1 6=1024 9=2 -23310=1,-4.931463e-02
+Convolution              Conv_145                 1 1 input.488 input.496 0=16 1=1 11=7 14=3 5=1 6=1792 9=2 -23310=1,-3.044449e-01
+Convolution              Conv_147                 1 1 input.496 input.504 0=16 1=7 11=1 4=3 14=0 5=1 6=1792 9=2 -23310=1,-1.327009e-01
+Convolution              Conv_149                 1 1 input.504 input.512 0=64 1=1 5=1 6=1024 9=2 -23310=1,5.126950e-01
+BinaryOp                 Add_151                  2 1 input.480_splitncnn_0 input.512 onnx::PRelu_929
+ReLU                     PRelu_152                1 1 onnx::PRelu_929 input.516 0=1.263398e-01
+Split                    splitncnn_17             1 2 input.516 input.516_splitncnn_0 input.516_splitncnn_1
+Convolution              Conv_153                 1 1 input.516_splitncnn_1 input.524 0=16 1=1 5=1 6=1024 9=2 -23310=1,7.411508e-02
+Convolution              Conv_155                 1 1 input.524 input.532 0=16 1=3 2=4 4=4 5=1 6=2304 9=2 -23310=1,-2.546960e-01
+Convolution              Conv_157                 1 1 input.532 input.540 0=64 1=1 5=1 6=1024 9=2 -23310=1,5.724661e-01
+BinaryOp                 Add_159                  2 1 input.516_splitncnn_0 input.540 onnx::PRelu_948
+ReLU                     PRelu_160                1 1 onnx::PRelu_948 input.544 0=1.004522e-01
+Split                    splitncnn_18             1 2 input.544 input.544_splitncnn_0 input.544_splitncnn_1
+Convolution              Conv_161                 1 1 input.544_splitncnn_1 input.552 0=128 1=1 5=1 6=8192 9=2 -23310=1,-7.731669e-02
+ConvolutionDepthWise     Conv_163                 1 1 input.552 input.564 0=128 1=3 4=1 5=1 6=1152 7=128 9=1
+Convolution              Conv_165                 1 1 input.564 input.572 0=64 1=1 5=1 6=8192 9=2 -23310=1,9.228663e-01
+BinaryOp                 Add_167                  2 1 input.544_splitncnn_0 input.572 onnx::PRelu_965
+ReLU                     PRelu_168                1 1 onnx::PRelu_965 input.576 0=2.750686e-01
+Split                    splitncnn_19             1 2 input.576 input.576_splitncnn_0 input.576_splitncnn_1
+Convolution              Conv_169                 1 1 input.576_splitncnn_1 input.584 0=16 1=1 5=1 6=1024 9=2 -23310=1,6.511290e-02
+Convolution              Conv_171                 1 1 input.584 input.592 0=16 1=3 2=8 4=8 5=1 6=2304 9=2 -23310=1,-2.694161e-01
+Convolution              Conv_173                 1 1 input.592 input.600 0=64 1=1 5=1 6=1024 9=2 -23310=1,6.247629e-01
+BinaryOp                 Add_175                  2 1 input.576_splitncnn_0 input.600 onnx::PRelu_984
+ReLU                     PRelu_176                1 1 onnx::PRelu_984 input.604 0=2.310897e-01
+Split                    splitncnn_20             1 2 input.604 input.604_splitncnn_0 input.604_splitncnn_1
+Convolution              Conv_177                 1 1 input.604_splitncnn_1 input.612 0=16 1=1 5=1 6=1024 9=2 -23310=1,-2.298609e-01
+Convolution              Conv_179                 1 1 input.612 input.620 0=16 1=1 11=7 14=3 5=1 6=1792 9=2 -23310=1,-2.312039e-01
+Convolution              Conv_181                 1 1 input.620 input.628 0=16 1=7 11=1 4=3 14=0 5=1 6=1792 9=2 -23310=1,-1.315419e-01
+Convolution              Conv_183                 1 1 input.628 input.636 0=64 1=1 5=1 6=1024 9=2 -23310=1,4.730239e-01
+BinaryOp                 Add_185                  2 1 input.604_splitncnn_0 input.636 onnx::PRelu_1008
+ReLU                     PRelu_186                1 1 onnx::PRelu_1008 input.640 0=9.534014e-03
+Split                    splitncnn_21             1 2 input.640 input.640_splitncnn_0 input.640_splitncnn_1
+Convolution              Conv_187                 1 1 input.640_splitncnn_1 input.648 0=16 1=1 5=1 6=1024 9=2 -23310=1,1.631811e-01
+Convolution              Conv_189                 1 1 input.648 input.656 0=16 1=3 2=16 4=16 5=1 6=2304 9=2 -23310=1,-1.671377e-01
+Convolution              Conv_191                 1 1 input.656 input.664 0=64 1=1 5=1 6=1024 9=2 -23310=1,5.457639e-01
+BinaryOp                 Add_193                  2 1 input.640_splitncnn_0 input.664 onnx::PRelu_1027
+ReLU                     PRelu_194                1 1 onnx::PRelu_1027 input.668 0=-3.347438e-02
+Deconvolution            ConvTranspose_195        1 1 input.668 onnx::Add_1031 0=32 1=3 3=2 4=1 18=1 6=18432
+BinaryOp                 Add_196                  2 1 onnx::Add_1031 input.144_splitncnn_0 input.672
+Split                    splitncnn_22             1 2 input.672 input.672_splitncnn_0 input.672_splitncnn_1
+Convolution              Conv_197                 1 1 input.672_splitncnn_1 input.684 0=8 1=1 5=1 6=256 9=1
+Convolution              Conv_199                 1 1 input.684 input.696 0=8 1=3 4=1 5=1 6=576 9=1
+Convolution              Conv_201                 1 1 input.696 input.708 0=32 1=1 5=1 6=256 9=1
+BinaryOp                 Add_203                  2 1 input.672_splitncnn_0 input.708 input.712
+ReLU                     Relu_204                 1 1 input.712 input.716
+Split                    splitncnn_23             1 2 input.716 input.716_splitncnn_0 input.716_splitncnn_1
+Convolution              Conv_205                 1 1 input.716_splitncnn_1 input.728 0=8 1=1 5=1 6=256 9=1
+Convolution              Conv_207                 1 1 input.728 input.740 0=8 1=3 4=1 5=1 6=576 9=1
+Convolution              Conv_209                 1 1 input.740 input.752 0=32 1=1 5=1 6=256 9=1
+BinaryOp                 Add_211                  2 1 input.716_splitncnn_0 input.752 input.756
+ReLU                     Relu_212                 1 1 input.756 input.760
+Deconvolution            ConvTranspose_213        1 1 input.760 onnx::Add_1055 0=8 1=3 3=2 4=1 18=1 6=2304
+BinaryOp                 Add_214                  2 1 onnx::Add_1055 input.4_splitncnn_0 input.764
+Split                    splitncnn_24             1 2 input.764 input.764_splitncnn_0 input.764_splitncnn_1
+Convolution              Conv_215                 1 1 input.764_splitncnn_1 input.776 0=2 1=1 5=1 6=16 9=1
+Convolution              Conv_217                 1 1 input.776 input.788 0=2 1=3 4=1 5=1 6=36 9=1
+Convolution              Conv_219                 1 1 input.788 input.800 0=8 1=1 5=1 6=16 9=1
+BinaryOp                 Add_221                  2 1 input.764_splitncnn_0 input.800 input.804
+ReLU                     Relu_222                 1 1 input.804 input.808
+Deconvolution            ConvTranspose_223        1 1 input.808 output 0=1 1=3 3=2 4=1 18=1 6=72
