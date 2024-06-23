@@ -10,7 +10,7 @@ To deploy LW-IRSTNet on different mobile terminals, I uploaded models in differe
 
 I recently uploaded a. tflite format model. This model was deployed on the Xiaomi tablet 6Pro and achieved a good performance of 50FPS.
 
-In addition, we have also compiled a set of evaluation index libraries suitable for algorithms in this field, named BinarySOSMetrics.
+In addition, we have also compiled a set of evaluation metrics libraries suitable for algorithms in this field, named BinarySOSMetrics.
 
 The relevant code is published on https://github.com/BinarySOS/BinarySOSMetrics.
 
