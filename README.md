@@ -1,29 +1,67 @@
-# LW-IRSTNet
+LW-IRSTNet: Lightweight Infrared Small Target Segmentation Network
+https://doi.org/10.1109/TGRS.2023.3314586
 
-专利保护：申请(专利)号：	CN202310252896.1； 申请公布号：	CN116416430A
+https://patents.google.com/patent/CN116416430A
 
-R. Kou et al., "LW-IRSTNet: Lightweight Infrared Small Target Segmentation Network and Application Deployment," in IEEE Transactions on Geoscience and Remote Sensing, vol. 61, pp. 1-13, 2023, Art no. 5621313, doi: 10.1109/TGRS.2023.3314586. 
+https://github.com/IRSTD/STD-EvalKit
 
-To verify the accuracy, robustness, and computational complexity of LW-IRSTNet, 14 state-of-the-art networks are used as baselines for comparative analysis. The experimental results showed that the segmentation accuracy indexes (mIOU, F1, ROC) of LW-IRSTNet are all above or equal to the baseline best results on the public datasets. Meanwhile, the network params are compressed to 0.16M and FLOPs to 303M, which is much lower than the baseline results.
+Overview
+LW-IRSTNet is a lightweight deep learning network designed for infrared small target segmentation, achieving state-of-the-art performance with extremely low computational complexity. The network has been patented (CN202310252896.1) and published in IEEE Transactions on Geoscience and Remote Sensing.
 
-To deploy LW-IRSTNet on different mobile terminals, I uploaded models in different formats, including pkl, onnx, ncnn, tnn, and mnn.
+Key Features
+​​High Accuracy​​: Achieves top-tier segmentation accuracy (mIoU, F1, ROC) on public datasets
 
-I recently uploaded a. tflite format model. This model was deployed on the Xiaomi tablet 6Pro and achieved a good performance of 50FPS.
+​​Extremely Lightweight​​: Only 0.16M parameters and 303M FLOPs
 
-In addition, we have also compiled a set of evaluation metrics libraries suitable for algorithms in this field, named BinarySOSMetrics.
+​​Multi-Platform Deployment​​: Support for various mobile deployment formats
 
-The relevant code is published on https://github.com/IRSTD/STD-EvalKit.
+​​Real-Time Performance​​: 50FPS on Xiaomi Tablet 6Pro
 
-The main features of BinarySOSMetrics include:
+Performance Highlights
+Comparative experiments with 14 state-of-the-art networks demonstrate that LW-IRSTNet:
 
-High Efficiency: Multi-threading.
+Matches or exceeds baseline results on all segmentation accuracy metrics (mIoU, F1, ROC)
 
-Device Friendly: All metrics support automatic batch accumulation.
+Significantly reduces computational complexity compared to alternatives
 
-Unified API: All metrics provide the same API, Metric.update(labels, preds) complete the accumulation of batches， Metric.get() get metrics。
+Maintains robust performance across diverse datasets
 
-Unified Computational: We use the same calculation logic and algorithms for the same type of metrics, ensuring consistency between results.
+Model Formats Available
+We provide pre-trained models in multiple formats for easy deployment:
 
-Supports multiple data formats: Supports multiple input data formats, hwc/chw/bchw/bhwc/image path, more details in ./notebook/tutorial.ipynb
+pkl(PyTorch)
 
+onnx(Open Neural Network Exchange)
 
+ncnn(Tencent NCNN)
+
+tnn(Tencent TNN)
+
+mnn(Alibaba MNN)
+
+tflite(TensorFlow Lite)
+
+Evaluation Metrics Toolkit
+We developed ​​BinarySOSMetrics​​ (now integrated into STD-EvalKit) specifically for infrared small target segmentation evaluation:
+
+Toolkit Features:
+​​High Efficiency​​: Multi-threading support
+
+​​Device Friendly​​: Automatic batch accumulation for all metrics
+
+​​Unified API​​: Consistent interface across all metrics
+
+Metric.update(labels, preds)for batch accumulation
+
+Metric.get()to retrieve results
+
+​​Unified Computation​​: Consistent algorithms ensuring result reproducibility
+
+​​Flexible Input Support​​: Multiple data formats (hwc/chw/bchw/bhwc/image path)
+
+Supported Metrics:
+​​Pixel-Level​​: AUC ROC, AP PR, Precision, Recall, F1, IoU, NormalizedIoU
+
+​​Center-Level​​: Precision, Recall, F1, Average Precision, Pd_Fa, ROC
+
+​​Center Metrics​​: Normalized IoU, Mean Average Precision (COCO-style), Recall
