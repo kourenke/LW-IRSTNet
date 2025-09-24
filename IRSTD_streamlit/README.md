@@ -6,6 +6,8 @@
 
 - 使用 Steamlit 构建 Web 页面
 
+![fig1](./生成融合生态系统.png)
+
 ## 🐋 依赖
 
 > 推荐使用 pipenv 新建一个虚拟环境来管理 pip 包，防止依赖冲突。具体使用方法见 [Pipenv 使用说明] 。
@@ -62,3 +64,4 @@ class ModelType(Enum):
 [Pipenv 使用说明]: ./docs/pipenv-useages.md
 
 [Steamlit API reference]: https://docs.streamlit.io/library/api-reference
+
