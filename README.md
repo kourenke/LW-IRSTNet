@@ -1,14 +1,9 @@
-LW-IRSTNet: Lightweight Infrared Small Target Segmentation Network
-https://doi.org/10.1109/TGRS.2023.3314586
+## LW-IRSTNet: Lightweight Infrared Small Target Segmentation Network
 
-https://patents.google.com/patent/CN116416430A
-
-https://github.com/IRSTD/STD-EvalKit
-
-Overview
+## Overview
 LW-IRSTNet is a lightweight deep learning network designed for infrared small target segmentation, achieving state-of-the-art performance with extremely low computational complexity. The network has been patented (CN202310252896.1) and published in IEEE Transactions on Geoscience and Remote Sensing.
 
-Key Features
+## Key Features
 ​​High Accuracy​​: Achieves top-tier segmentation accuracy (mIoU, F1, ROC) on public datasets
 
 ​​Extremely Lightweight​​: Only 0.16M parameters and 303M FLOPs
@@ -17,7 +12,7 @@ Key Features
 
 ​​Real-Time Performance​​: 50FPS on Xiaomi Tablet 6Pro
 
-Performance Highlights
+## Performance Highlights
 Comparative experiments with 14 state-of-the-art networks demonstrate that LW-IRSTNet:
 
 Matches or exceeds baseline results on all segmentation accuracy metrics (mIoU, F1, ROC)
@@ -26,7 +21,7 @@ Significantly reduces computational complexity compared to alternatives
 
 Maintains robust performance across diverse datasets
 
-Model Formats Available
+## Model Formats Available
 We provide pre-trained models in multiple formats for easy deployment:
 
 pkl(PyTorch)
@@ -41,10 +36,12 @@ mnn(Alibaba MNN)
 
 tflite(TensorFlow Lite)
 
-Evaluation Metrics Toolkit
+## Evaluation Metrics Toolkit
 We developed ​​BinarySOSMetrics​​ (now integrated into STD-EvalKit) specifically for infrared small target segmentation evaluation:
 
-Toolkit Features:
+https://github.com/IRSTD/STD-EvalKit
+
+## Toolkit Features:
 ​​High Efficiency​​: Multi-threading support
 
 ​​Device Friendly​​: Automatic batch accumulation for all metrics
@@ -59,7 +56,7 @@ Metric.get()to retrieve results
 
 ​​Flexible Input Support​​: Multiple data formats (hwc/chw/bchw/bhwc/image path)
 
-Supported Metrics:
+## Supported Metrics:
 ​​Pixel-Level​​: AUC ROC, AP PR, Precision, Recall, F1, IoU, NormalizedIoU
 
 ​​Center-Level​​: Precision, Recall, F1, Average Precision, Pd_Fa, ROC
