@@ -6,7 +6,7 @@
 
 - 使用 Steamlit 构建 Web 页面
 
-![fig1](./生成融合生态系统.png)
+![fig1](./streamlit_main.png)
 
 ## 🐋 依赖
 
@@ -64,4 +64,5 @@ class ModelType(Enum):
 [Pipenv 使用说明]: ./docs/pipenv-useages.md
 
 [Steamlit API reference]: https://docs.streamlit.io/library/api-reference
+
 
